@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+@apply bg-[#141414];
+font-family: 'MyCustomFont', sans-serif;
+}
+
+@font-face{
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/NetflixSans-Regular.otf');
+}
+
+
