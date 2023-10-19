@@ -6,19 +6,18 @@ const Feature = () => {
   return (
     <div className="relative top-0 h-[100vh] bg-gradient-to-r from-[rgba(0, 0, 0, 0.6)] to-transparent flex flex-col w-full justify-between">
       <div
-        className="w-full h-full flex bg-cover bg-center justify-between image-container relative img-container"
+        className="w-full h-full flex bg-cover bg-center justify-between relative "
         style={{
-          backgroundImage:
-            ' url("https://occ-0-3769-325.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABRX1tvA9B35v15OQmJXZZiGdnGd6USomaPOapET2yFxKlyZ4Tl5RQKLpt2IlrCmWY9-W9XPdRr-EqwPABdPrN3ZfIbNleN9oT2B8.webp?r=694")',
+          backgroundImage: `linear-gradient(to bottom,rgba(20,20,20,0) 50%,rgba(20,20,20,.15) 65%,rgba(20,20,20,.35) 79%,rgba(20,20,20,.58) 94%, #141414 100%), url("https://occ-0-3769-325.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABRX1tvA9B35v15OQmJXZZiGdnGd6USomaPOapET2yFxKlyZ4Tl5RQKLpt2IlrCmWY9-W9XPdRr-EqwPABdPrN3ZfIbNleN9oT2B8.webp?r=694")`,
         }}
       >
         {/* Side Movie Title */}
         <div className="flex w-[65%]">
           <div
-            className="relative top-0 text-white flex flex-start text-2xl p-4  items-start py-[80px] px-[56px]"
+            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[95%]  items-start py-[80px] px-[56px]"
             style={{
               background:
-                "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+                "linear-gradient(to right, rgba(0, 0, 0, 0.5),", 
             }}
           >
             <div className="flex flex-col gap-y-5">
