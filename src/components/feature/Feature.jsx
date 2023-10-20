@@ -14,7 +14,7 @@ const Feature = () => {
         {/* Side Movie Title */}
         <div className="flex w-[65%]">
           <div
-            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[95%]  items-start py-[80px] px-[56px]"
+            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[100%]  items-start py-[80px] px-[56px]"
             style={{
               background:
                 "linear-gradient(to right, rgba(0, 0, 0, 0.5),", 

@@ -30,7 +30,7 @@ const TopPicksTest = ({ index }) => {
 
       {isHovered && (
         <div
-          className="absolute inset-0 bg-[#141414] text-white flex flex-col justify-center items-center transition-transform z-[99] w-[400px] h-[300px] rounded-md ease-in-out duration-300 transform cursor-pointer delay-100 -top-10 -left-14"
+          className="absolute inset-0 bg-[#141414] text-white flex flex-col justify-center items-center transition-transform z-[99] w-[200px] h-[100px] rounded-lg ease-in-out duration-300 transform cursor-pointer delay-100 top-24 -left-14"
         >
           <h3 className="text-2xl font-semibold">Movie Title</h3>
           <p className="text-sm">Movie Title</p>
