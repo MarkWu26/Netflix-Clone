@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TopPicksItem = ({index}) => {
+const TrendingNowItem = ({index}) => {
   const [isHovered, setIsHovered] = useState(null);
 
   const handleHoverEnter = (index) => {
@@ -39,4 +39,4 @@ const TopPicksItem = ({index}) => {
   );
 };
 
-export default TopPicksItem;
+export default TrendingNowItem;

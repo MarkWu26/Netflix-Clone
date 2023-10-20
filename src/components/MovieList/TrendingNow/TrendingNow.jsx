@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import { PiCaretLeftBold } from "react-icons/pi";
 import { PiCaretRightBold } from "react-icons/pi";
-import TopPicksItem from "./TopPicksItem";
+import TrendingNowItem from "./TrendingNowItem";
 
 const movieData = [
   {
@@ -35,13 +35,13 @@ const movieData = [
   },
 ];
 
-const TopPicks = () => {
+const TrendingNow = () => {
   return (
     <>
-      <div className="flex flex-col gap-y-3  relative mt-[-140px] ">
+      <div className="flex flex-col gap-y-3 relative -mt-52 ">
         {/* List Heading */}
         <div className="text-[21px] text-white px-[60px] font-semibold">
-          <h2>Top Picks for You</h2>
+          <h2>Trending Now</h2>
         </div>
       </div>
 
@@ -56,12 +56,11 @@ const TopPicks = () => {
         spaceBetween={-60} // Adjust this value as needed to control the space between images
         className=" h-[400px] items-center my-custom-swiper overflow-y-visible flex"
       >
-        {/* Navigation Arrows */}
-        <div className="pl-[20px] overflow-hidden w-[100%] pr-0 flex items-center ">
-          <div className="right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-8 top-[45px] rounded-[5px]">
+        <div className="pl-[20px] overflow-hidden w-[100%] pr-0 flex items-center">
+          <div className=" right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-8 top-[65px]  rounded-[5px]">
             <PiCaretRightBold className="flex items-center justify-center" />
           </div>
-          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-7 top-[45px]  rounded-[5px]">
+          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-7 top-[65px]  rounded-[5px]">
             <PiCaretLeftBold className="flex items-center justify-center" />
           </div>
         </div>
@@ -75,7 +74,7 @@ const TopPicks = () => {
               height: "180px",
             }}
           >
-            <TopPicksItem index={index} />
+            <TrendingNowItem index={index} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -83,4 +82,4 @@ const TopPicks = () => {
   );
 };
 
-export default TopPicks;
+export default TrendingNow;

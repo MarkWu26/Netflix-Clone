@@ -8,19 +8,19 @@ const Feature = () => {
       <div
         className="w-full h-full flex bg-cover bg-center justify-between relative "
         style={{
-          backgroundImage: `linear-gradient(to bottom,rgba(20,20,20,0) 50%,rgba(20,20,20,.15) 65%,rgba(20,20,20,.35) 79%,rgba(20,20,20,.58) 94%, #141414 100%), url("https://occ-0-3769-325.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABRX1tvA9B35v15OQmJXZZiGdnGd6USomaPOapET2yFxKlyZ4Tl5RQKLpt2IlrCmWY9-W9XPdRr-EqwPABdPrN3ZfIbNleN9oT2B8.webp?r=694")`,
+          backgroundImage: `linear-gradient(to bottom,rgba(20,20,20,0) 50%,rgba(20,20,20,.15) 65%,rgba(20,20,20,.35) 79%, rgba(20,20,20,.58) 94%, #141414 100%), url("https://occ-0-3769-325.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABRX1tvA9B35v15OQmJXZZiGdnGd6USomaPOapET2yFxKlyZ4Tl5RQKLpt2IlrCmWY9-W9XPdRr-EqwPABdPrN3ZfIbNleN9oT2B8.webp?r=694")`,
         }}
       >
         {/* Side Movie Title */}
-        <div className="flex w-[65%]">
+        <div className="flex w-[100%]">
           <div
-            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[100%]  items-start py-[80px] px-[56px]"
+            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[100%]  items-start py-[80px] w-full bg-gradient-to-r"
             style={{
-              background:
-                "linear-gradient(to right, rgba(0, 0, 0, 0.5),", 
+              background: 'linear-gradient(to bottom, rgba(20,20,20,.30) 10%,rgba(20,20,20,.35) 25%,rgba(20,20,20,.35) 79%, rgba(20,20,20,.58) 94%, #141414 100%)'
+            
             }}
           >
-            <div className="flex flex-col gap-y-5">
+            <div className="flex flex-col gap-y-5 px-[50px]">
               {/* Picture Title */}
               <div>
                 <img
@@ -35,7 +35,7 @@ const Feature = () => {
               </div>
 
               {/* Info */}
-              <div className="flex text-white text-[18px] w-[60%] items-center leading-snug">
+              <div className="flex text-white text-[18px] w-[50%] items-center leading-snug">
                 <p>
                   Gifted with superhuman strength, a young woman returns to
                   korea to find her birth family - only to be entangled in a
