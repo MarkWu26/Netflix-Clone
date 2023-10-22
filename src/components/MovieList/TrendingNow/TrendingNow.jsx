@@ -38,7 +38,7 @@ const movieData = [
 const TrendingNow = () => {
   return (
     <>
-      <div className="flex flex-col gap-y-3 relative -mt-52 ">
+      <div className="flex flex-col gap-y-3 relative  ">
         {/* List Heading */}
         <div className="text-[21px] text-white px-[60px] font-semibold">
           <h2>Trending Now</h2>
@@ -54,7 +54,7 @@ const TrendingNow = () => {
         modules={[Navigation]}
         slidesPerView={6}
         spaceBetween={-60} // Adjust this value as needed to control the space between images
-        className=" h-[400px] items-center my-custom-swiper overflow-y-visible flex"
+        className=" h-[300px] items-center my-custom-swiper overflow-y-visible flex "
       >
         <div className="pl-[20px] overflow-hidden w-[100%] pr-0 flex items-center">
           <div className=" right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-8 top-[65px]  rounded-[5px]">

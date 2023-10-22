@@ -1,8 +1,10 @@
 import React from "react";
 import { IoMdPlay } from "react-icons/io";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Feature = () => {
+  const navigate = useNavigate()
   return (
     <div className="relative top-0 h-[100vh] bg-gradient-to-r from-[rgba(0, 0, 0, 0.6)] to-transparent flex flex-col w-full justify-between">
       <div
@@ -12,15 +14,16 @@ const Feature = () => {
         }}
       >
         {/* Side Movie Title */}
-        <div className="flex w-[100%]">
+        <div className="flex w-[100%] items-center"
+         style={{
+          background: 'linear-gradient(to bottom, rgba(20,20,20,.30) 10%,rgba(20,20,20,.35) 25%,rgba(20,20,20,.35) 79%, rgba(20,20,20,.58) 94%, #141414 100%)'
+        }}
+        >
           <div
-            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[100%]  items-start py-[80px] w-full bg-gradient-to-r"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(20,20,20,.30) 10%,rgba(20,20,20,.35) 25%,rgba(20,20,20,.35) 79%, rgba(20,20,20,.58) 94%, #141414 100%)'
-            
-            }}
+            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[80%] w-full bg-gradient-to-r"
+           
           >
-            <div className="flex flex-col gap-y-5 px-[50px]">
+            <div className="flex top-[50%] flex-col gap-y-5 px-[50px]">
               {/* Picture Title */}
               <div>
                 <img
@@ -45,7 +48,9 @@ const Feature = () => {
 
               {/* Buttons */}
               <div className="flex flex-row gap-x-[2px]">
-                <button className="py-[7px] pr-[28px] pl-[24px] rounded-[5px] bg-white mr-[10px] align-center items-center flex hover:opacity-90 text-black text-[18px] font-bold tracking-wide">
+                <button className="py-[7px] pr-[28px] pl-[24px] rounded-[5px] bg-white mr-[10px] align-center items-center flex hover:opacity-90 text-black text-[18px] font-bold tracking-wide"
+                onClick={()=> navigate('/player')}
+                >
                   <div className="flex items-center justify-center gap-x-2">
                     <IoMdPlay className="text-[31px]" />
                     <div>

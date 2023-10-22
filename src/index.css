@@ -16,6 +16,29 @@ font-family: 'MyCustomFont', sans-serif;
   @apply pl-[40px]
 }
 
+.skeleton-loader {
+  width: 220px;
+  height: 127px;
+  background-color: #f0f0f0; /* Gray background color */
+  border-radius: 4px; /* Rounded corners */
+  animation: loading 4s infinite; /* Loading animation */
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 
 
 
