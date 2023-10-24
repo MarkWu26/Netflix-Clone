@@ -59,32 +59,26 @@ const TopPicksItem = ({ index, imgPath, title, movieGenres, genres }) => {
             <div className="flex flex-row gap-x-3 mx-5 text-sm font-extralight">
               {genreList.map((genre, index) => (
                 <div key={index}>
-                  
                   <div className="flex flex-row items-center gap-x-2">
-                    {index !== 3 && (
-                      genre.name
-                    )}
+                    {index !== 3 && genre.name}
 
-                    {index !== genreList.length - 1 && (
-                      <GoDotFill className="text-[#6D6D6EB3] text-xs" />
+                    {genreList.length < 3 ? (
+                      index !== genreList.length - 1 && ( //if there
+                        <GoDotFill className="text-[#6D6D6EB3] text-xs" />
+                      )
+                    ) : index < 3 ? (
+                      index === 2 ? (
+                        <div className="hidden"></div>
+                      ) : (
+                        <GoDotFill className="text-[#6D6D6EB3] text-xs" />
+                      )
+                    ) : (
+                      <div></div>
                     )}
                   </div>
                 </div>
               ))}
             </div>
-
-            {/*   <div className="text-xl flex flex-col items-center">
-              <h3 className="text-lg font-semibold w-[50%] flex justify-center">
-                {title}
-              </h3>
-              <div className="flex flex-row text-sm gap-x-2 justify-start">
-                {genreList.map((item, key) => (
-                  <div key={key}>
-                    <p className="text-xs">{item.name}</p>
-                  </div>
-                ))}
-              </div>
-            </div> */}
           </div>
         )}
       </div>
