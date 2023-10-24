@@ -58,7 +58,7 @@ const sampleTest = [
   }, [data, isLoading, error]);
 
  const genres = useSelector(fetchGenres)
- console.log('the genres are:', genres);
+ 
 
   return (
     <>
@@ -82,10 +82,10 @@ const sampleTest = [
       >
         {/* Navigation Arrows */}
         <div className="pl-[20px] overflow-hidden w-[100%] pr-0 flex items-center ">
-          <div className="right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-8 top-[45px] rounded-[5px]">
+          <div className="right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-40 py-[68px] px-8 top-[45px] rounded-[5px]">
             <PiCaretRightBold className="flex items-center justify-center" />
           </div>
-          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-20 py-[68px] px-7 top-[45px]  rounded-[5px]">
+          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-40 py-[68px] px-7 top-[45px]  rounded-[5px]">
             <PiCaretLeftBold className="flex items-center justify-center" />
           </div>
         </div>

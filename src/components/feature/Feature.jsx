@@ -20,7 +20,7 @@ const Feature = () => {
         }}
         >
           <div
-            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[80%] w-full bg-gradient-to-r"
+            className="relative top-0 text-white flex flex-start text-2xl p-4 h-[85%] w-full bg-gradient-to-r"
            
           >
             <div className="flex top-[50%] flex-col gap-y-5 px-[50px]">
