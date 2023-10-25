@@ -5,7 +5,7 @@ import { BsHandThumbsUp } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi2";
 import { GoDotFill } from "react-icons/go";
 
-const TopPicksItem = ({ index, imgPath, title, movieGenres, genres }) => {
+const MovieListItem = ({ index, imgPath, title, movieGenres, genres }) => {
   const [isHovered, setIsHovered] = useState(null);
 
   const imgUrl = `https://image.tmdb.org/t/p/original${imgPath}`;
@@ -25,7 +25,7 @@ const TopPicksItem = ({ index, imgPath, title, movieGenres, genres }) => {
       <div
         onMouseEnter={() => handleHoverEnter(index)}
         onMouseLeave={() => handleHoverLeave()}
-        className={` whitespace-nowrap -mr-[46px] flex flex-row -z-40 transition-transform hover:scale-110  ease-in-out transform  ${
+        className={` whitespace-nowrap -mr-[46px] flex flex-row transition-transform hover:scale-110  ease-in-out transform ${
           isHovered === index ? "hovered" : ""
         }`}
       >
@@ -36,7 +36,9 @@ const TopPicksItem = ({ index, imgPath, title, movieGenres, genres }) => {
         />
 
         {isHovered === index && (
-          <div className="absolute shadow-xl  bg-[#141414] text-white   transition-transform z-[999] hover:rounded-lg w-[315px] h-[300px] rounded-lg ease-in-out duration-300 transform cursor-pointer delay-100 -top-[110px] overflow-hidden -left-7  flex-col flex hover:z-[1000]">
+          <div className="absolute shadow-xl  bg-[#141414] text-white   transition-transform hover:rounded-lg w-[315px] h-[300px] rounded-lg ease-in-out duration-300 transform cursor-pointer delay-100 -top-[110px] overflow-hidden -left-7  flex-col flex z-[999] hover:z-[999] "
+          style={{zIndex: 9999}}
+          >
             <div className="flex items-start justify-center">
               <img
                 alt=""
@@ -86,4 +88,4 @@ const TopPicksItem = ({ index, imgPath, title, movieGenres, genres }) => {
   );
 };
 
-export default TopPicksItem;
+export default MovieListItem;

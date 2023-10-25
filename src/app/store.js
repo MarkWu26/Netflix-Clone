@@ -5,7 +5,9 @@ import genreReducer from './genres/genreSlice'
 export const store = configureStore({
     reducer:{
         [movieApiSlice.reducerPath]: movieApiSlice.reducer,
-        genres: genreReducer
+        genres: genreReducer,
+        
+
     },
     middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(movieApiSlice.middleware),

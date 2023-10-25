@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Feature from "../components/feature/Feature";
-import TopPicks from "../components/MovieList/TopPicks/TopPicks";
-import TrendingNow from "../components/MovieList/TrendingNow/TrendingNow";
+import MovieList from "../components/MovieList/MovieList";
 import Test from "../components/MovieList/test";
 
 const Home = () => {
@@ -9,8 +8,9 @@ const Home = () => {
     <>
       <Navbar />
       <Feature />
-      <TopPicks />
-      <TrendingNow />
+      <MovieList title={'Top Picks For You'}/>
+      <MovieList title={'Trending Now'}/>
+      
     </>
   );
 };

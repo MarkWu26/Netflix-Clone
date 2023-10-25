@@ -1,53 +1,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
-
 import { Navigation } from "swiper/modules";
 import { PiCaretLeftBold } from "react-icons/pi";
 import { PiCaretRightBold } from "react-icons/pi";
-import TopPicksItem from "./TopPicksItem";
+import MovieListItem from "./MovieListItem";
 import { useEffect } from "react";
-import { useGetPopularMoviesQuery } from "../../../app/api/movieApiSlice";
+import { useGetPopularMoviesQuery, useGetTopRatedQuery } from "../../app/api/movieApiSlice";
 import { useSelector } from "react-redux";
-import { fetchGenres } from "../../../app/genres/genreSlice";
+import { fetchGenres } from "../../app/genres/genreSlice";
+import { LoadingData } from "./LoadingData";
 
-const TopPicks = () => {
-  const { data, error, isLoading } = useGetPopularMoviesQuery();
+const MovieList = ({title}) => {
 
-const sampleTest = [
-  {
+  const topRatedQuery = useGetTopRatedQuery();
+  const getPopularQuery = useGetPopularMoviesQuery()
 
-  },
-  {
+  const query = title === 'Top Picks For You' ? topRatedQuery : title === 'Trending Now' ? getPopularQuery : '';
 
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-  {
-
-  },
-
-]
+  const { data, error, isLoading } = query;
 
   useEffect(() => {
     if (error) {
@@ -61,11 +32,11 @@ const sampleTest = [
  
 
   return (
-    <>
+    <div className="mb-32 hover:-z-[100]">
       <div className="flex flex-col  relative mt-[-140px] ">
         {/* List Heading */}
         <div className="text-[21px] text-white px-[60px] font-semibold">
-          <h2>Top Picks for You</h2>
+          <h2>{title}</h2>
         </div>
       </div>
 
@@ -85,7 +56,7 @@ const sampleTest = [
           <div className="right-0 flex items-center justify-center swiper-button-next text-[#E5E5E5] bg-[#141414] bg-opacity-40 py-[68px] px-8 top-[45px] rounded-[5px]">
             <PiCaretRightBold className="flex items-center justify-center" />
           </div>
-          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-40 py-[68px] px-7 top-[45px]  rounded-[5px]">
+          <div className=" left-0 flex items-center justify-center swiper-button-prev text-[#E5E5E5] bg-[#141414] bg-opacity-40 py-[68px] px-7 top-[45px]  rounded-[5px]  ">
             <PiCaretLeftBold className="flex items-center justify-center" />
           </div>
         </div>
@@ -94,14 +65,14 @@ const sampleTest = [
           data.results.map((item, index) => (
           <SwiperSlide
             key={index}
-            className=" h-[400px] -z-[999] hover:-z-50 custom-slide whitespace-nowrap flex items-center "
+            className=" h-[400px] -z-[1099] hover:z-[50] custom-slide whitespace-nowrap flex items-center "
             style={{
               width: "135px", // Adjust the width to accommodate your images
               minWidth: "135px", // Minimum width
               height: "180px",
             }}
           >
-            <TopPicksItem 
+            <MovieListItem 
             index={index} 
             imgPath={item.backdrop_path} 
             title={item.title} 
@@ -111,7 +82,7 @@ const sampleTest = [
           </SwiperSlide>
         ))
         ) : (
-          sampleTest.map((item, index)=> (
+          LoadingData.map((item, index)=> (
             <SwiperSlide
             className=" h-[400px] -z-[999] hover:-z-50 custom-slide whitespace-nowrap flex items-center "
             style={{
@@ -120,22 +91,19 @@ const sampleTest = [
               height: "180px",
             }}
             key={index}
-          >
-          
+          >      
               <div className="skeleton-loader transition-all ease-in-out duration-300  ">
 
               </div>
-            
-           
-            
+      
           </SwiperSlide>
           ))
          
         )
         }
       </Swiper>
-    </>
+    </div>
   );
 };
 
-export default TopPicks;
+export default MovieList;
