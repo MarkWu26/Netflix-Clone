@@ -20,13 +20,16 @@ export const movieApiSlice = createApi({
         }),
         getTopRated: builder.query({
             query: () => '/movie/top_rated'
+        }),
+        getUpcoming: builder.query({
+            query: () => '/movie/upcoming'
         })
     }),
    
 })
 
 export const {
-    useGetPopularMoviesQuery, useGetTopRatedQuery
+    useGetPopularMoviesQuery, useGetTopRatedQuery, useGetUpcomingQuery
 } = movieApiSlice
 
 export const { reducer } = movieApiSlice;
