@@ -48,3 +48,29 @@ font-family: 'MyCustomFont', sans-serif;
   @apply pl-[60px] 
 }
 
+.wrapper{
+  height:180px;
+
+  overflow:hidden;
+}
+.hover-iframe{
+
+  top:100%;
+  transform:translateY(-39.5%);
+ 
+  left:0px;
+  pointer-events:none;
+  width:21.5vw;
+  height:56.25vw;
+}
+
+.player{
+  top:20%;
+  transform:translateY(-22.5%);
+ 
+  left:0px;
+  pointer-events:none;
+  width:100vw;
+  height:100vw;
+}
+

@@ -10,6 +10,7 @@ const Home = () => {
       <Feature />
       <MovieList title={'Top Picks For You'}/>
       <MovieList title={'Trending Now'}/>
+      <MovieList title={'Upcoming'}/>
       
     </>
   );

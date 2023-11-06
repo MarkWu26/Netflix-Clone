@@ -8,9 +8,9 @@ import GenreInitializer from "./app/genres/GenreInitializer.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <React.StrictMode>
+  
       <GenreInitializer/>
       <App />
-    </React.StrictMode>
+    
   </Provider>
 );
