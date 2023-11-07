@@ -2,12 +2,15 @@ import { useState } from "react";
 import netflixbg from "../assets/img/netflix-bg.jpg";
 import { useNavigate } from "react-router-dom";
 import {Formik, Form, Field} from 'formik'
-import { useRegisterUserMutation } from "../app/api/userApiSlice";
+import {useRegisterUserMutation} from "../app/api/userApiSlice";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../app/user/userSlice";
 
 const Login = () => {
     const navigate = useNavigate()
     const [isLogin, setIsLogin] = useState(true)
     const [registerUser] = useRegisterUserMutation();
+    const dispatch = useDispatch();
 
     const initialValues = {
       firstName: "",
@@ -16,16 +19,28 @@ const Login = () => {
       password: "",
     }
 
-    const handleSubmit = async (values) => {
+    const type = isLogin ? 'login' : 'signup'
+
+    const handleSubmit = async (values, type) => {
       try {
-        const response = await registerUser(values).unwrap();
-        console.log(`the response is: ${response}`)
+        if(type==='signup'){
+          const response = await registerUser(values).unwrap();
+          console.log(response);
+          const firstName = response.savedUser.firstName
+          const lastName = response.savedUser.lastName;
+          const token = response.accessToken;
+          dispatch(setLogin(firstName, lastName, token))
+          if(firstName && lastName && token){
+            navigate('/home')
+          }
+        }
+      
+       
       } catch (error) {
         console.log(error);
         console.error(error)
       }
     }
-
   return (
     <div
       style={{ backgroundImage: `linear-gradient(to bottom, rgba(20,20,20,.50) 50%,rgba(20,20,20,.55) 55%,rgba(20,20,20,.55) 79%, rgba(20,20,20,.58) 100%, #141414 100%), url(${netflixbg}) ` }}
@@ -41,7 +56,7 @@ const Login = () => {
       </div>
       {/* Form Sign in  */}
       <Formik
-      onSubmit={handleSubmit}
+      onSubmit={(values)=>handleSubmit(values, type)}
       initialValues={initialValues}
       >
         <Form>
@@ -59,11 +74,13 @@ const Login = () => {
                       type="text"
                       className="rounded-md py-3 w-full bg-[#333] text-white px-4"
                       placeholder="First Name"
+                      name="firstName"
                     />
                       <Field
                       type="text"
                       className="rounded-md py-3 w-full bg-[#333] text-white px-4"
                       placeholder="Last Name"
+                      name="lastName"
                     />
                     </>
                   )}
@@ -71,17 +88,18 @@ const Login = () => {
                     type="text"
                     className="rounded-md py-3 w-full bg-[#333] text-white px-4"
                     placeholder="Email or phone number"
+                    name="email"
                   />
                   <Field
                     type="password"
                     className="rounded-md py-3 w-full bg-white text-[#333] px-4"
                     placeholder="Password"
+                    name="password"
                   />
                 </div>
                 {/* Submit button */}
                 <div>
                   <button className="rounded-md py-3 w-full flex justify-center items-center text-white bg-[#e50914] hover:opacity-90"
-                  onClick={()=> navigate('/home')}
                   type="submit"
                   >{isLogin? 'Sign In' : 'Sign Up'}</button>
                 </div>
@@ -102,6 +120,7 @@ const Login = () => {
                 <div>
                     <p className="text-[#737373] ">{isLogin? 'New to Netflix?' : 'Already have an account?'}
                     <button className="ml-1 text-white hover:cursor-pointer"
+                    type="button"
                     onClick={()=>setIsLogin(!isLogin)}
                     >{isLogin? 'Sign up now.' : 'Sign in now.'}</button></p>
                 </div>

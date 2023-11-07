@@ -1,4 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit'
+import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 import {movieApiSlice} from './api/movieApiSlice'
 import genreReducer from './genres/genreSlice'
 import userReducer from './user/userSlice'

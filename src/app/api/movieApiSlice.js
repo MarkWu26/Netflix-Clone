@@ -14,6 +14,7 @@ const baseQuery = fetchBaseQuery({
 
 export const movieApiSlice = createApi({
     baseQuery: baseQuery,
+    reducerPath: 'movieApi',
     endpoints: (builder) => ({
         getPopularMovies: builder.query({
             query: () => '/movie/popular'

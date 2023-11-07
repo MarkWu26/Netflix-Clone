@@ -3,10 +3,14 @@ import {FaRegBell} from 'react-icons/fa6'
 import profilePic from '../../assets/img/profile.png'
 import {RiArrowDownSFill} from 'react-icons/ri'
 import { useState } from 'react'
+import { currentUser } from '../../app/user/userSlice'
+import { useSelector } from 'react-redux'
 
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState();
+    const currentUsername = useSelector(currentUser)
+    console.log('the current username is: ', currentUsername)
 
     window.onscroll = () => {
         setIsScrolled(window.scrollY === 0 ? false : true);
@@ -53,7 +57,9 @@ const Navbar = () => {
 
             {/* User tools Right Section*/}
             <div className='flex flex-row gap-x-7 items-center text-white text-[20px]'>
+           
                 <div className='flex items-center cursor-pointer text-[24px]'>
+                    
                     <IoSearch/>
                 </div>
                 <div className='flex items-center cursor-pointer'>

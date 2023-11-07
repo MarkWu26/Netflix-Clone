@@ -1,11 +1,13 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
 const baseQuery = fetchBaseQuery({
     baseUrl: "http://localhost:3001"
 })
 
 export const userApiSlice = createApi({
     baseQuery: baseQuery,
-    endpoints: builder => ({
+    reducerPath: 'userApi',
+    endpoints: (builder) => ({
         registerUser: builder.mutation({
             query: (credentials) => ({
                 url: '/auth/register',
@@ -17,4 +19,4 @@ export const userApiSlice = createApi({
 })
 
 export const {useRegisterUserMutation} = userApiSlice
-export const {reducer} = userApiSlice
+
